@@ -33,8 +33,18 @@ workflow.add_conditional_edges(TESTINGIMAGE,check_correct_design)
 
 app = workflow.compile()
 
-raw_image_base64=""
-with open(os.path.join(ROOT_DIR, "lsch.jpeg"), "rb") as raw_image:
-    raw_image_base64 = base64.b64encode(raw_image.read()).decode("utf-8") 
+# raw_image_base64=""
+# with open(os.path.join(ROOT_DIR, "ytkodsi-raw-image-ing.jpeg"), "rb") as raw_image:
+#     raw_image_base64 = base64.b64encode(raw_image.read()).decode("utf-8") 
     
-app.invoke(input={"encoded_raw_image":raw_image_base64})
+# graph_result=app.invoke(input={"encoded_raw_image":raw_image_base64})
+
+# print(graph_result["encoded_processed_image"])
+# base64_string = graph_result["encoded_processed_image"]
+# base64_string = base64_string.split(',')[-1]
+# # Dosyaya yazılacak çıktı dosya adı (uzantıya dikkat!)
+# output_file = "output_image.png"
+
+# # Base64 string'ini decode edip dosyaya yaz
+# with open(output_file, "wb") as f:
+#     f.write(base64.b64decode(base64_string))

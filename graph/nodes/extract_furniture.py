@@ -16,5 +16,5 @@ def extract_furniture(state:GraphState)->Dict[str,any]:
         "raw_image_base64":raw_image
     })
     print("EXTRACTED")
-    print(response)
+    # print(response)
     return {"items":response.furniturelist}

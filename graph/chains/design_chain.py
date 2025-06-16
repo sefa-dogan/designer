@@ -47,13 +47,13 @@ def build_multimodal_prompt(raw_image_base64: str):
     }]
 prompt_builder=RunnableLambda(
     lambda inputs: build_multimodal_prompt(
-        inputs["raw_image_base64"],
+        inputs["raw_image_base64"], # type: ignore
         
     )
 )
 design_chain=prompt_builder | RunnableLambda(
     lambda prompt: llm.invoke(
-        prompt,
+        prompt, # type: ignore
         generation_config={"response_modalities": ["TEXT", "IMAGE"]}
     )
 )

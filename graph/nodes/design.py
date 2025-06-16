@@ -10,6 +10,7 @@ from graph.state import GraphState
 def design(state:GraphState)->Dict[str,any]:
     raw_image=state["encoded_raw_image"]
     response=design_chain.invoke({"raw_image_base64":raw_image},)
+    # print("Design response:", response)
     processed_image=extract_base64_image(response)
     print("----------")
     print("DESIGN")

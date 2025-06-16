@@ -8,3 +8,5 @@ google-genai
 langchain-google-genai
 ipython
 pillow
+fastapi
+uvicorn
