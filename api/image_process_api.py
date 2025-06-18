@@ -13,7 +13,7 @@ async def read_root(body:DesignRequest ):
         processed_img = await process_image(body.raw_image)
     except Exception as e:
         print("Error processing image:", e)
-        raise HTTPException(status_code=500, detail="Error processing image")
+        raise HTTPException(status_code=500, detail=f"Error processing image: ${str(e)}")
     return {
         "encoded_processed_image": processed_img,
     }
