@@ -18,11 +18,7 @@ llm = ChatGoogleGenerativeAI(
     model="gemini-2.0-flash-exp-image-generation",
     temperature=1
 )
-# structuredLlm=llm.with_structured_output(ResponseFormatter)
-# raw_image_base64=""
-# with open(os.path.join(ROOT_DIR, "lsch.jpeg"), "rb") as raw_image:
-#     raw_image_base64 = base64.b64encode(raw_image.read()).decode("utf-8") 
-    
+
 
 def build_multimodal_prompt(raw_image_base64: str):
     return [{

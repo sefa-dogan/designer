@@ -7,7 +7,6 @@ api=FastAPI()
 
 @api.post("/design")
 async def read_root(body:DesignRequest ):
-    # print("raw_image",body.raw_image)
     try:
 
         processed_img = await process_image(body.raw_image)
@@ -19,13 +18,10 @@ async def read_root(body:DesignRequest ):
     }
     
 async def process_image(raw_image: str):
-    # print("func: ")
     graph_result= app.invoke(input={"encoded_raw_image":raw_image})
 
-    # print(graph_result["encoded_processed_image"])
     base64_string = graph_result["encoded_processed_image"]
     base64_string = base64_string.split(',')[-1]
-    # Dosyaya yazılacak çıktı dosya adı (uzantıya dikkat!)
     output_file = "output_image.png"
 
     # Base64 string'ini decode edip dosyaya yaz
